@@ -4,7 +4,6 @@ import Image from "next/image"
 import { useRef, useEffect, useState } from "react"
 
 const partners = [
-  { src: "/harare-city-council-400x330.png", alt: "Harare City Council", width: 120, height: 80 },
   { src: "/justice-logo-4.png", alt: "Ministry of Justice", width: 160, height: 80 },
   { src: "/lands.png", alt: "Ministry of Lands", width: 150, height: 80 },
   { src: "/land-tenure.png", alt: "Land Tenure Implementation Committee", width: 140, height: 80 },
@@ -65,7 +64,7 @@ export default function PartnersSection() {
                   alt={partner.alt}
                   width={partner.width}
                   height={partner.height}
-                  className="h-16 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
               </div>
             ))}

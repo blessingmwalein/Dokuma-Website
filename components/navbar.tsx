@@ -7,9 +7,9 @@ import Image from "next/image"
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 
 const navLinks = [
+  { href: "/about", label: "About Us" },
   { href: "/solutions", label: "Solutions", hasDropdown: true },
   { href: "/projects", label: "Case Studies" },
-  { href: "/about", label: "About Us" },
   { href: "/newsroom", label: "Newsroom" },
 ]
 
@@ -31,8 +31,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const isHomePage = pathname === "/"
-  const showWhiteText = isHomePage && isHeroSection && !isScrolled
+  const showWhiteText = isHeroSection && !isScrolled
 
   return (
     <header

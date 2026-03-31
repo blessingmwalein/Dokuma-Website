@@ -8,9 +8,9 @@ import WhyDokuma from "@/components/solutions/why-dokuma"
 import SolutionsCTA from "@/components/solutions/solutions-cta"
 
 export const metadata = {
-  title: "Our Solutions | Dokuma",
-  description:
-    "Comprehensive digital solutions for Africa - Digital Land Administration, Document Digitisation, Cloud Infrastructure, Payment Platforms, Licensing Systems, and Cybersecurity.",
+  title: "Our Solutions | Dokuma Digital Offerings",
+  description: "Explore Dokuma's comprehensive digital solutions: Digital Land Administration, Document Digitisation, Cloud Infrastructure, Payment Platforms, Licensing Systems, and Advanced Cybersecurity.",
+  keywords: ["digital land administration", "document digitisation", "secure payment platforms", "cloud infrastructure", "cybersecurity Africa", "tech solutions"],
 }
 
 export default function SolutionsPage() {

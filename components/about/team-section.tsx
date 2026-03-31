@@ -3,32 +3,6 @@
 import { useRef, useEffect, useState } from "react"
 import { Linkedin, Users } from "lucide-react"
 
-const teamMembers = [
-  {
-    name: "CEO Name",
-    role: "Chief Executive Officer",
-    bio: "Visionary leader with extensive experience in digital transformation across African markets.",
-    initials: "CEO",
-  },
-  {
-    name: "CFO Name",
-    role: "Chief Financial Officer",
-    bio: "Expert in financial strategy and sustainable business growth for technology companies.",
-    initials: "CFO",
-  },
-  {
-    name: "CTO Name",
-    role: "Chief Technology Officer",
-    bio: "Technology innovator driving cutting-edge solutions for government digital systems.",
-    initials: "CTO",
-  },
-  {
-    name: "Commercial Manager",
-    role: "Commercial Manager",
-    bio: "Strategic partnerships and business development expert with deep public sector experience.",
-    initials: "CM",
-  },
-]
 
 export default function TeamSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -68,48 +42,12 @@ export default function TeamSection() {
             The People Behind Dokuma
           </p>
           <h2 className="text-3xl md:text-4xl font-light leading-tight text-foreground mb-5 tracking-tight">
-            Our Leadership Team
+            Our Team
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             A diverse group of technologists, strategists, and innovators united
             by a shared passion for Africa&apos;s digital future.
           </p>
-        </div>
-
-        {/* Team Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {teamMembers.map((member, i) => (
-            <div
-              key={i}
-              className={`group p-8 border border-border/50 rounded-xl hover:border-primary/30 hover-lift hover-glow transition-all duration-500 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: `${200 + i * 100}ms` }}
-            >
-              <div className="w-16 h-16 rounded-full bg-muted mb-6 flex items-center justify-center overflow-hidden">
-                <span className="text-lg font-semibold text-muted-foreground/60">
-                  {member.initials}
-                </span>
-              </div>
-              <h3 className="text-base font-semibold text-foreground mb-1">
-                {member.name}
-              </h3>
-              <p className="text-sm text-primary font-medium mb-3">
-                {member.role}
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                {member.bio}
-              </p>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
-          ))}
         </div>
 
         {/* Team Photo Section */}
@@ -118,9 +56,6 @@ export default function TeamSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <h3 className="text-xl font-light text-foreground mb-4 tracking-tight">
-            The Dokuma Team
-          </h3>
           <div className="aspect-[16/9] max-w-4xl mx-auto bg-muted rounded-xl flex items-center justify-center mb-6 overflow-hidden border border-border/50">
             <div className="text-center">
               <Users className="w-12 h-12 text-muted-foreground/30 mx-auto mb-3" />

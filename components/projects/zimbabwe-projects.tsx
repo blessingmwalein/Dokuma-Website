@@ -27,25 +27,6 @@ const zimbabweProjects = [
     link: "https://deeds.gov.zw",
   },
   {
-    title: "Business Licensing for the City of Harare",
-    country: "Zimbabwe",
-    client: "City of Harare",
-    status: "Active",
-    highlight: { value: "City-Wide", label: "Licensing System" },
-    summary:
-      "Modernizing the business licensing process to aid economic growth through a digital licensing and enforcement platform.",
-    description: [
-      "This partnership between Dokuma and the City of Harare allows for streamlining of the business licensing process, in turn aiding the growth of businesses and the economy in the region. The company has been contracted to provide business licensing services for the City of Harare, as well as enforce the licensing requirements.",
-      "Dokuma's technology-driven approach and expertise in digital record-keeping and license processing aids the City of Harare in improving the efficiency and effectiveness of its business licensing processes.",
-    ],
-    tags: [
-      "Business Licensing",
-      "Digital Enforcement",
-      "Municipal Services",
-      "Economic Growth",
-    ],
-  },
-  {
     title: "Fleet Management System for Agricultural Tractors",
     country: "Zimbabwe",
     client: "Government of Zimbabwe",

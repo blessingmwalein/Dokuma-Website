@@ -8,8 +8,9 @@ import { OfficeLocations } from "@/components/contact/office-locations"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Dokuma",
-  description: "Get in touch with Dokuma. We're here to help with your digital transformation journey. Contact our offices in Zimbabwe and Rwanda.",
+  title: "Get in Touch | Contact Dokuma",
+  description: "Partner with Dokuma to accelerate your digital transformation. Reach out to our dedicated teams in Zimbabwe and Rwanda for innovative technical solutions and IT consultancy.",
+  keywords: ["contact Dokuma", "IT consultancy Africa", "tech partnership", "Dokuma offices", "Zimbabwe tech", "Rwanda tech"],
 }
 
 export default function ContactPage() {
