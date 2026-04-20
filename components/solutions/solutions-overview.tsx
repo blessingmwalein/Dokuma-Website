@@ -36,12 +36,6 @@ const solutions = [
     desc: "Secure payment platforms enabling efficient financial transactions across digital services for governments and enterprises.",
   },
   {
-    title: "Licensing, Registration & Permit Systems",
-    icon: Shield,
-    tagline: "Streamline Regulatory Processes",
-    desc: "Digital platforms that streamline business licensing, permit issuance, professional registrations, and regulatory approvals.",
-  },
-  {
     title: "Cybersecurity Services",
     icon: Lock,
     tagline: "Protect Critical Digital Assets",

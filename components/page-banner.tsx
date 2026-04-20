@@ -5,64 +5,54 @@ import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { useEffect, useState, useCallback } from "react"
 
-const slides = [
-  {
-    id: 1,
-    image: "/images/hero-bg.jpg",
-    title: "Transforming Africa's Digital Future",
-    subtitle: "Your Fully Integrated Technology Partner",
-    description: "Enterprise-grade solutions that empower governments and institutions with secure, scalable, and intelligent systems.",
-  },
-  {
-    id: 2,
-    image: "/images/slide-digitisation.jpg",
-    title: "Document Digitisation",
-    subtitle: "60 Million+ Pages Processed",
-    description: "Converting physical archives into searchable, secure digital assets with AI-powered indexing and retrieval systems.",
-  },
-  {
-    id: 3,
-    image: "/images/slide-cloud.jpg",
-    title: "Cloud Infrastructure",
-    subtitle: "500TB+ Secure Data Storage",
-    description: "Enterprise-grade cloud solutions with military-grade encryption, ensuring your data is always protected and accessible.",
-  },
-  {
-    id: 4,
-    image: "/images/slide-egovernment.jpg",
-    title: "E-Government Solutions",
-    subtitle: "Powering Digital Services",
-    description: "Streamlining public services with citizen-centric digital platforms that enhance efficiency and transparency.",
-  },
-]
+export type BannerSlide = {
+  id: number | string
+  image: string
+  title: string
+  subtitle: string
+  description: string
+}
 
-export default function HeroSection() {
+type PageBannerProps = {
+  slides: BannerSlide[]
+  ctaLabel?: string
+  ctaHref?: string
+  autoplayMs?: number
+  minHeightClass?: string
+}
+
+export default function PageBanner({
+  slides,
+  ctaLabel = "CONTACT US",
+  ctaHref = "/contact",
+  autoplayMs = 6000,
+  minHeightClass = "min-h-[85vh]",
+}: PageBannerProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }, [])
+  }, [slides.length])
 
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }, [])
+  }, [slides.length])
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
-  // Auto-advance slides
   useEffect(() => {
-    if (isPaused) return
-    const interval = setInterval(nextSlide, 6000)
+    if (isPaused || slides.length < 2) return
+    const interval = setInterval(nextSlide, autoplayMs)
     return () => clearInterval(interval)
-  }, [isPaused, nextSlide])
+  }, [isPaused, nextSlide, autoplayMs, slides.length])
 
   return (
-    <section 
-      className="relative min-h-screen bg-primary overflow-hidden"
+    <section
+      className={`relative ${minHeightClass} bg-primary overflow-hidden`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -87,7 +77,7 @@ export default function HeroSection() {
       ))}
 
       {/* Content Area */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-20">
+      <div className={`relative z-10 ${minHeightClass} flex items-center justify-center px-4 pt-28 pb-20`}>
         <div className="w-full max-w-6xl mx-auto">
           <div className="relative border border-white/25 rounded-3xl p-8 md:p-16">
             {/* Corner accents */}
@@ -96,7 +86,6 @@ export default function HeroSection() {
 
             {/* Main content */}
             <div className="text-center max-w-4xl mx-auto">
-              {/* Slide content with animation */}
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
@@ -115,7 +104,7 @@ export default function HeroSection() {
                       >
                         {slide.subtitle}
                       </p>
-                      
+
                       <h1
                         className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 transition-all duration-700 delay-200 ${
                           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -136,59 +125,62 @@ export default function HeroSection() {
                 </div>
               ))}
 
-              {/* CTA Button */}
-              <div
-                className={`transition-all duration-700 delay-400 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                }`}
-              >
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-3 text-white font-medium text-lg hover:text-chart-1 transition-colors"
-                >
-                  <span>CONTACT US</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Slide Navigation */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? "bg-chart-1 w-8"
-                      : "bg-white/40 hover:bg-white/60"
+              {ctaLabel && ctaHref && (
+                <div
+                  className={`transition-all duration-700 delay-400 ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+                >
+                  <Link
+                    href={ctaHref}
+                    className="group inline-flex items-center gap-3 text-white font-medium text-lg hover:text-chart-1 transition-colors"
+                  >
+                    <span>{ctaLabel}</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              )}
             </div>
 
-            {/* Arrow Navigation */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            {slides.length > 1 && (
+              <>
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? "bg-chart-1 w-8"
+                          : "bg-white/40 hover:bg-white/60"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
 
       {/* Bottom dim fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent z-10" />
     </section>
   )
 }

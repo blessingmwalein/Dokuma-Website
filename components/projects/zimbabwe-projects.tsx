@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef, useEffect, useState, useCallback } from "react"
+import { useRef, useEffect, useState } from "react"
 import ProjectCard from "./project-card"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const zimbabweProjects = [
   {
@@ -90,34 +89,17 @@ const zimbabweProjects = [
 
 export default function ZimbabweProjects() {
   const [isVisible, setIsVisible] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const sliderRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
-  const total = zimbabweProjects.length
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true)
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
-  }, [])
-
-  const handleScroll = useCallback(() => {
-    const slider = sliderRef.current
-    if (!slider) return
-    const index = Math.round(slider.scrollLeft / slider.clientWidth)
-    setCurrentIndex(index)
-  }, [])
-
-  const goTo = useCallback((index: number) => {
-    const slider = sliderRef.current
-    if (!slider) return
-    slider.scrollTo({ left: index * slider.clientWidth, behavior: "smooth" })
-    setCurrentIndex(index)
   }, [])
 
   return (
@@ -125,82 +107,37 @@ export default function ZimbabweProjects() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div
-          className={`mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 transition-all duration-700 ${
+          className={`mb-14 flex items-center gap-5 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           }`}
         >
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-              <span className="text-2xl">ZW</span>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-1">
-                Zimbabwe
-              </p>
-              <h2 className="text-3xl md:text-4xl font-light leading-tight text-foreground tracking-tight">
-                Zimbabwe Case Studies
-              </h2>
-            </div>
+          <div className="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+            <span className="text-2xl font-semibold">ZW</span>
           </div>
-
-          {/* Slider controls */}
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-muted-foreground tabular-nums">
-              {currentIndex + 1} <span className="text-muted-foreground/40">/</span> {total}
-            </span>
-            <div className="flex gap-2">
-              <button
-                onClick={() => goTo(Math.max(0, currentIndex - 1))}
-                disabled={currentIndex === 0}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Previous project"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => goTo(Math.min(total - 1, currentIndex + 1))}
-                disabled={currentIndex === total - 1}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Next project"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-1">
+              Zimbabwe
+            </p>
+            <h2 className="text-3xl md:text-4xl font-light leading-tight text-foreground tracking-tight">
+              Projects in Zimbabwe
+            </h2>
           </div>
         </div>
 
-        {/* Slider track */}
-        <div
-          ref={sliderRef}
-          onScroll={handleScroll}
-          className={`flex overflow-x-auto snap-x snap-mandatory scrollbar-hide transition-opacity duration-700 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+        {/* Vertical stack */}
+        <div className="flex flex-col gap-8">
           {zimbabweProjects.map((project, i) => (
             <div
               key={i}
-              className="snap-start flex-shrink-0 w-full"
-              style={{ minWidth: "100%" }}
+              className={`transition-all duration-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
               <ProjectCard project={project} />
             </div>
-          ))}
-        </div>
-
-        {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-8">
-          {zimbabweProjects.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              aria-label={`Go to project ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === currentIndex
-                  ? "w-8 bg-primary"
-                  : "w-2 bg-border hover:bg-muted-foreground/40"
-              }`}
-            />
           ))}
         </div>
       </div>

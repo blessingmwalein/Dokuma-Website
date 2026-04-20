@@ -79,22 +79,6 @@ const solutions = [
       "These systems enable governments and enterprises to improve revenue collection and enable seamless digital transactions.",
   },
   {
-    title: "Licensing, Registration & Permit Systems",
-    icon: Shield,
-    tagline: "Streamline Regulatory Processes",
-    desc: "Dokuma provides digital platforms that streamline regulatory processes, reducing bureaucracy and improving efficiency for both governments and citizens.",
-    features: [
-      "Business licensing and renewals",
-      "Permit issuance and tracking",
-      "Professional registrations",
-      "Regulatory approvals workflow",
-      "Digital enforcement systems",
-      "Compliance monitoring and reporting",
-    ],
-    impact:
-      "These systems reduce bureaucracy and improve efficiency for both governments and citizens, enabling faster service delivery.",
-  },
-  {
     title: "Cybersecurity Services",
     icon: Lock,
     tagline: "Protect Critical Digital Assets",

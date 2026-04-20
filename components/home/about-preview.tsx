@@ -52,11 +52,11 @@ export default function AboutPreview() {
             {/* Vision + Mission */}
             <div className="space-y-6 mb-10">
               <div className="flex gap-4 items-start">
-                <div className="w-1 h-14 bg-orange-400 flex-shrink-0 mt-0.5 rounded-full" />
+                <div className="w-1 h-14 bg-chart-1 flex-shrink-0 mt-0.5 rounded-full" />
                 <div>
                   <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-1.5">Vision</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    To become Africa&apos;s leading provider of secure digital transformation solutions for governments and enterprises.
+                    To be Africa&apos;s leading catalyst for digital transformation.
                   </p>
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default function AboutPreview() {
                 <div>
                   <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-1.5">Mission</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    To deliver innovative digital systems and infrastructure that enable efficient governance, secure information management, and sustainable economic development.
+                    We deliver software and technology solutions that reduce costs, accelerate service delivery, and improve decision-making.
                   </p>
                 </div>
               </div>
@@ -73,10 +73,10 @@ export default function AboutPreview() {
 
             <Link
               href="/about"
-              className="group inline-flex items-center gap-3 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-all duration-300"
             >
               <span>About us</span>
-              <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+              <span className="w-6 h-6 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:bg-primary-foreground/30 transition-all duration-300">
                 <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
@@ -101,18 +101,8 @@ export default function AboutPreview() {
                 Africa with highly qualified people delivering for our clients every day.
               </p>
 
-              {/* CTA + Stats */}
-              <div className="flex flex-wrap items-center gap-6 mb-10">
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-3 px-6 py-3 border-2 border-primary text-primary font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
-                >
-                  <span>Let&apos;s talk</span>
-                  <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300">
-                    <ArrowRight className="w-3 h-3" />
-                  </span>
-                </Link>
-
+              {/* Stats */}
+              <div className="flex flex-wrap items-center gap-8 mb-10">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl font-semibold text-primary">60M+</span>
                   <span className="text-sm text-muted-foreground leading-tight">Pages<br />Digitized</span>
@@ -126,7 +116,7 @@ export default function AboutPreview() {
 
               {/* Core values badges */}
               <div className="flex flex-wrap gap-2">
-                {["Innovation", "Integrity", "Security", "Excellence", "Partnership"].map((value) => (
+                {["Integrity", "Agility", "Partnership", "Innovation", "Impact"].map((value) => (
                   <span
                     key={value}
                     className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/8 text-primary border border-primary/15"
@@ -142,7 +132,7 @@ export default function AboutPreview() {
                 <div className="w-2 h-2 bg-primary/20" />
               </div>
               <div className="absolute bottom-0 -left-4 flex flex-col gap-1">
-                <div className="w-2 h-2 bg-orange-400/60" />
+                <div className="w-2 h-2 bg-chart-1/60" />
                 <div className="w-2 h-2 bg-primary/20" />
               </div>
             </div>

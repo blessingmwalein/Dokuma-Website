@@ -8,10 +8,20 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Send, CheckCircle } from "lucide-react"
 
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
   const formRef = useRef<HTMLDivElement>(null)
+
+  // Form fields
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [organization, setOrganization] = useState("")
+  const [service, setService] = useState("")
+  const [message, setMessage] = useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,19 +45,43 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
+    setError("")
+
+    const payload = {
+      name: `${firstName} ${lastName}`.trim(),
+      email,
+      organization,
+      _subject: `New ${service ? service : "General Inquiry"} inquiry from ${firstName} ${lastName}`.trim(),
+      message,
+      inquiryType: service || "General Inquiry",
+    }
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/dokumazw@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+      const data = await res.json()
+      if (data.success === "true" || data.success === true) {
+        setIsSubmitted(true)
+      } else {
+        setError(data.message || "Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      setError("Could not send message. Please try again later.")
+    }
     setIsSubmitting(false)
-    setIsSubmitted(true)
   }
 
   if (isSubmitted) {
     return (
       <div 
         ref={formRef}
-        className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-8 text-center opacity-0 lg:p-12"
+        className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-8 text-center lg:p-12 animate-slide-in-left"
       >
         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
           <CheckCircle className="h-8 w-8 text-primary" />
@@ -82,6 +116,8 @@ export function ContactForm() {
               placeholder="John" 
               required 
               className="bg-background"
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}
             />
           </div>
           <div className="space-y-2">
@@ -91,6 +127,8 @@ export function ContactForm() {
               placeholder="Doe" 
               required 
               className="bg-background"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
             />
           </div>
         </div>
@@ -103,6 +141,8 @@ export function ContactForm() {
             placeholder="john@example.com" 
             required 
             className="bg-background"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
 
@@ -112,23 +152,25 @@ export function ContactForm() {
             id="organization" 
             placeholder="Your organization name" 
             className="bg-background"
+            value={organization}
+            onChange={e => setOrganization(e.target.value)}
           />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="service">Service of Interest</Label>
-          <Select>
+          <Select value={service} onValueChange={setService}>
             <SelectTrigger className="bg-background">
               <SelectValue placeholder="Select a service" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="digitization">Document Digitization</SelectItem>
-              <SelectItem value="land">Land Administration Systems</SelectItem>
-              <SelectItem value="egov">E-Government Solutions</SelectItem>
-              <SelectItem value="cloud">Cloud Infrastructure</SelectItem>
-              <SelectItem value="security">Cybersecurity Services</SelectItem>
-              <SelectItem value="consulting">IT Consulting</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
+              <SelectItem value="Document Digitization">Document Digitization</SelectItem>
+              <SelectItem value="Land Administration Systems">Land Administration Systems</SelectItem>
+              <SelectItem value="E-Government Solutions">E-Government Solutions</SelectItem>
+              <SelectItem value="Cloud Infrastructure">Cloud Infrastructure</SelectItem>
+              <SelectItem value="Cybersecurity Services">Cybersecurity Services</SelectItem>
+              <SelectItem value="IT Consulting">IT Consulting</SelectItem>
+              <SelectItem value="Other">Other</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -140,8 +182,12 @@ export function ContactForm() {
             placeholder="Tell us about your project or inquiry..." 
             required 
             className="min-h-[120px] bg-background"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
           />
         </div>
+
+        {error && <div className="text-red-500 text-sm">{error}</div>}
 
         <Button 
           type="submit" 

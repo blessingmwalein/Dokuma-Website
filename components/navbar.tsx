@@ -7,9 +7,10 @@ import Image from "next/image"
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/solutions", label: "Solutions", hasDropdown: true },
-  { href: "/projects", label: "Case Studies" },
+  { href: "/projects", label: "Projects" },
   { href: "/newsroom", label: "Newsroom" },
 ]
 

@@ -11,7 +11,10 @@ import Footer from "@/components/footer"
 import HeroSection from "@/components/home/hero-section"
 import PartnersSection from "@/components/home/partners-section"
 import ServicesSection from "@/components/home/services-section"
+import ImpactMetrics from "@/components/home/impact-metrics"
 import AboutPreview from "@/components/home/about-preview"
+import CEOMessage from "@/components/home/ceo-message"
+import FinalCTA from "@/components/home/final-cta"
 
 export default function Home() {
   return (
@@ -20,7 +23,10 @@ export default function Home() {
       <HeroSection />
       <PartnersSection />
       <ServicesSection />
-      <AboutPreview />
+      <ImpactMetrics />
+      {/* <AboutPreview /> */}
+      {/* <CEOMessage /> */}
+      <FinalCTA />
       <Footer />
     </div>
   )

@@ -29,12 +29,12 @@ const solutions = [
     description: "Secure payment platforms enabling mobile money, card, and bank transfer transactions — helping governments and enterprises improve revenue collection.",
     link: "/solutions#payments",
   },
-  {
-    icon: ClipboardList,
-    title: "Licensing, Registration & Permit Systems",
-    description: "Digital platforms streamlining business licensing, permit issuance, professional registrations, and regulatory approvals to reduce bureaucracy.",
-    link: "/solutions#licensing",
-  },
+  // {
+  //   icon: ClipboardList,
+  //   title: "Licensing, Registration & Permit Systems",
+  //   description: "Digital platforms streamlining business licensing, permit issuance, professional registrations, and regulatory approvals to reduce bureaucracy.",
+  //   link: "/solutions#licensing",
+  // },
   {
     icon: Shield,
     title: "Cybersecurity Services",
@@ -65,7 +65,7 @@ export default function ServicesSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 px-6 lg:px-8 bg-white dark:bg-background">
+    <section ref={sectionRef} className="py-24 md:py-32 px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
@@ -96,12 +96,12 @@ export default function ServicesSection() {
           </div>
           <Link
             href="/solutions"
-            className={`group inline-flex items-center gap-3 px-6 py-3 border-2 border-primary text-primary font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300 ${
+            className={`group inline-flex items-center gap-3 px-6 py-3 border-2 border-primary text-primary font-medium rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
             <span>All solutions</span>
-            <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300">
+            <span className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center group-hover:bg-primary-foreground group-hover:text-primary transition-all duration-300">
               <ArrowRight className="w-3 h-3" />
             </span>
           </Link>
@@ -125,8 +125,8 @@ export default function ServicesSection() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <solution.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
                   </div>
-                  {/* Orange accent dot */}
-                  <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-orange-400 rounded-sm" />
+                  {/* Accent dot */}
+                  <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-chart-1 rounded-sm" />
                 </div>
 
                 {/* Content */}
