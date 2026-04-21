@@ -8,8 +8,8 @@ import { useEffect, useState, useCallback } from "react"
 const slides = [
   {
     id: 1,
-    image: "/images/hero-bg.jpg",
-    title: "Transforming Africa's Digital Future",
+    image: "/images/hero-bg.png",
+    title: "Shaping Africa's Digital Future",
     subtitle: "Your Fully Integrated Technology Partner",
     description: "Enterprise-grade solutions that empower governments and institutions with secure, scalable, and intelligent systems.",
   },

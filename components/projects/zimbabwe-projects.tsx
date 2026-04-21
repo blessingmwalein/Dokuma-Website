@@ -26,26 +26,6 @@ const zimbabweProjects = [
     link: "https://deeds.gov.zw",
   },
   {
-    title: "Fleet Management System for Agricultural Tractors",
-    country: "Zimbabwe",
-    client: "Government of Zimbabwe",
-    status: "Delivered",
-    highlight: { value: "3,000+", label: "Tractors Managed" },
-    summary:
-      "A fleet management system tracking and managing over 3,000 tractors owned by farmers, including allocation to remote areas and farms.",
-    description: [
-      "Dokuma implemented a comprehensive fleet management system for the Government of Zimbabwe to manage over 3,000 tractors owned by farmers across the country. The system provides real-time tracking, allocation management, and operational oversight of the entire agricultural fleet.",
-      "By digitizing the fleet management process, the system has improved transparency in tractor distribution, reduced downtime through proactive maintenance alerts, and provided government stakeholders with actionable insights.",
-    ],
-    tags: [
-      "Fleet Management",
-      "GPS Tracking",
-      "Agriculture",
-      "Remote Allocation",
-      "Real-Time Monitoring",
-    ],
-  },
-  {
     title: "Toruka Data Centre",
     country: "Zimbabwe",
     client: "Dokuma / Private Sector",

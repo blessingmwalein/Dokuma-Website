@@ -45,7 +45,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
-              Transforming Africa&apos;s digital future through innovative technology
+              Shaping Africa&apos;s digital future through innovative technology
               solutions for governments and enterprises.
             </p>
             
