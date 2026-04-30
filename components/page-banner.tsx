@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react"
 import { useEffect, useState, useCallback } from "react"
 
 export type BannerSlide = {
@@ -178,6 +178,21 @@ export default function PageBanner({
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator button */}
+      <button
+        onClick={() => {
+          window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })
+        }}
+        className="absolute left-1/2 -translate-x-1/2 z-20 animate-bounce"
+        style={{ bottom: "calc(2rem - 10px)" }}
+        aria-label="Scroll down to view more"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-white text-xs font-semibold tracking-wide uppercase">Scroll to view more</span>
+          <ChevronDown className="w-6 h-6 text-white animate-pulse" />
+        </div>
+      </button>
 
       {/* Bottom dim fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent z-10" />

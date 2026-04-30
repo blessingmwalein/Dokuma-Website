@@ -9,37 +9,31 @@ const solutions = [
     icon: Database,
     title: "Digital Land Administration Systems",
     description: "Secure systems for digitised title deeds and land administration, ensuring tamper-proof records, transparent ownership verification, and reduced land fraud.",
-    link: "/solutions#land-administration",
+    link: "/solutions#solution-0",
   },
   {
     icon: FileText,
     title: "Large Scale Document Digitisation",
     description: "Converting physical archives into secure digital repositories. With 60M+ pages digitized, we provide one of Africa's most scalable document digitization services.",
-    link: "/solutions#digitisation",
+    link: "/solutions#solution-1",
   },
   {
     icon: Server,
     title: "Data Centre & Cloud Infrastructure",
     description: "Data centre design, private cloud, and hybrid cloud integration. We manage private cloud environments exceeding 500TB, scalable to 10PB for mission-critical systems.",
-    link: "/solutions#cloud",
+    link: "/solutions#solution-2",
   },
   {
     icon: CreditCard,
     title: "Digital Payment Platforms",
     description: "Secure payment platforms enabling mobile money, card, and bank transfer transactions — helping governments and enterprises improve revenue collection.",
-    link: "/solutions#payments",
+    link: "/solutions#solution-3",
   },
-  // {
-  //   icon: ClipboardList,
-  //   title: "Licensing, Registration & Permit Systems",
-  //   description: "Digital platforms streamlining business licensing, permit issuance, professional registrations, and regulatory approvals to reduce bureaucracy.",
-  //   link: "/solutions#licensing",
-  // },
   {
     icon: Shield,
     title: "Cybersecurity Services",
     description: "Comprehensive protection via security risk assessments, penetration testing, threat monitoring, and security architecture implementation.",
-    link: "/solutions#cybersecurity",
+    link: "/solutions#solution-4",
   },
 ]
 
@@ -78,13 +72,14 @@ export default function ServicesSection() {
               Choose your scope of expertise
             </p>
             <div className="flex items-center gap-8">
-              <h2
-                className={`text-3xl md:text-4xl font-semibold text-foreground transition-all duration-700 delay-100 ${
+              <Link
+                href="/solutions"
+                className={`text-3xl md:text-4xl font-semibold text-foreground hover:text-primary transition-colors duration-300 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
                 Solutions
-              </h2>
+              </Link>
               <span
                 className={`text-3xl md:text-4xl font-semibold text-muted-foreground/30 transition-all duration-700 delay-100 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"

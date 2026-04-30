@@ -30,5 +30,5 @@ const slides: BannerSlide[] = [
 ]
 
 export default function AboutHero() {
-  return <PageBanner slides={slides} ctaLabel="LEARN MORE" ctaHref="/about#who-we-are" />
+  return <PageBanner slides={slides} />
 }

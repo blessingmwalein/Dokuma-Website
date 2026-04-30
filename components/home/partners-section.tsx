@@ -8,7 +8,7 @@ const partners = [
   { src: "/lands.png", alt: "Ministry of Lands" },
   { src: "/land-tenure.png", alt: "Land Tenure Implementation Committee" },
   { src: "/housing-social.png", alt: "Ministry of National Housing" },
-  { src: "/public-works.jpg", alt: "Ministry of Local Government and Public Works" },
+  { src: "/public-works.png", alt: "Ministry of Local Government and Public Works" },
 ]
 
 export default function PartnersSection() {

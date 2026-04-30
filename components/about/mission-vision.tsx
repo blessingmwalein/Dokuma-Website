@@ -82,39 +82,39 @@ export default function MissionVision() {
               <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
                 Africa&apos;s leading catalyst for digital transformation.
               </h3>
-              <p className="text-white/80 leading-relaxed">
+              {/* <p className="text-white/80 leading-relaxed">
                 Building a continent where technology empowers every government,
                 enterprise, and citizen to thrive in the digital age.
-              </p>
+              </p> */}
             </div>
           </div>
 
           {/* Mission card */}
           <div
-            className={`group relative overflow-hidden rounded-3xl border border-border/60 bg-background shadow-lg transition-all duration-700 delay-300 hover:-translate-y-1 hover:border-primary/30 ${
+            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-chart-2 to-chart-3 text-white shadow-xl shadow-chart-2/20 transition-all duration-700 delay-300 hover:-translate-y-1 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10" />
-            <div className="absolute right-6 top-6 text-7xl font-bold text-primary/10 leading-none select-none">
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
+            <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
               02
             </div>
 
             <div className="relative p-10 md:p-12">
-              <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                <Target className="h-6 w-6 text-primary" />
+              <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
+                <Target className="h-6 w-6 text-white" />
               </div>
-              <p className="text-[11px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/70 font-semibold mb-3">
                 Our Mission
               </p>
-              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-5 tracking-tight text-balance">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
                 Software &amp; technology that delivers measurable impact.
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              {/* <p className="text-white/80 leading-relaxed">
                 We deliver solutions that reduce costs, accelerate service
                 delivery, and improve decision-making — at scale, across the
                 continent.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

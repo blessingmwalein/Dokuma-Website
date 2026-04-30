@@ -3,8 +3,8 @@
 import { FileText, Video, Newspaper } from "lucide-react"
 
 const tabs = [
-  { id: "press", label: "Press Releases", icon: FileText },
-  { id: "stories", label: "Success Stories", icon: Video },
+  // { id: "press", label: "Press Releases", icon: FileText },
+  // { id: "stories", label: "Success Stories", icon: Video },
   { id: "media", label: "In the Media", icon: Newspaper },
 ]
 

@@ -3,17 +3,15 @@
 import { useEffect, useRef } from "react"
 import { MapPin, Building2 } from "lucide-react"
 
-const offices = [
-  {
-    country: "Zimbabwe",
-    city: "Harare",
-    address: "78 Piers Road",
-    building: "Borrowdale, Harare",
-    postal: "Zimbabwe",
-    description: "Our headquarters and primary operations center",
-    isPrimary: true,
-  },
-]
+const offices: Array<{
+  country: string
+  city: string
+  address: string
+  building: string
+  postal: string
+  description: string
+  isPrimary: boolean
+}> = []
 
 export function OfficeLocations() {
   const sectionRef = useRef<HTMLElement>(null)

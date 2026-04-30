@@ -1,9 +1,16 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Mail, Phone, Clock, Globe, Shield } from "lucide-react"
+import { Mail, Phone, Clock, Globe, Shield, MapPin } from "lucide-react"
 
 const contactMethods = [
+  {
+    icon: MapPin,
+    title: "Visit Us",
+    description: "Our headquarters",
+    value: "78 Piers Road, Borrowdale, Harare, Zimbabwe",
+    href: null,
+  },
   {
     icon: Mail,
     title: "Email Us",
@@ -15,8 +22,8 @@ const contactMethods = [
     icon: Phone,
     title: "Call Us",
     description: "Mon-Fri from 8am to 5pm CAT",
-    value: "+263 77 259 5347",
-    href: "tel:+263772595347",
+    value: "+263 773 320 160",
+    href: "tel:+263773320160",
   },
   {
     icon: Clock,

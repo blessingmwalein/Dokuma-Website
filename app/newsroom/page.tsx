@@ -11,7 +11,7 @@ import MediaFeatures from "@/components/newsroom/media-features"
 import NewsroomCTA from "@/components/newsroom/newsroom-cta"
 
 export default function NewsroomPage() {
-  const [activeTab, setActiveTab] = useState("press")
+  const [activeTab, setActiveTab] = useState("media")
 
   return (
     <div className="min-h-screen bg-background">
@@ -20,8 +20,8 @@ export default function NewsroomPage() {
       <NewsroomTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <section className="py-24 md:py-32 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {activeTab === "press" && <PressReleases />}
-          {activeTab === "stories" && <SuccessStories />}
+          {/* {activeTab === "press" && <PressReleases />}
+          {activeTab === "stories" && <SuccessStories />} */}
           {activeTab === "media" && <MediaFeatures />}
         </div>
       </section>
