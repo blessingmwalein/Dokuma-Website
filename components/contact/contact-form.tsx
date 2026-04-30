@@ -6,8 +6,14 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Send, CheckCircle } from "lucide-react"
+import { Send, CheckCircle, RefreshCw } from "lucide-react"
 
+
+function generateCaptcha() {
+  const a = Math.floor(Math.random() * 9) + 1
+  const b = Math.floor(Math.random() * 9) + 1
+  return { a, b, answer: a + b }
+}
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -22,6 +28,11 @@ export function ContactForm() {
   const [organization, setOrganization] = useState("")
   const [service, setService] = useState("")
   const [message, setMessage] = useState("")
+
+  // Honeypot + CAPTCHA (anti-spam)
+  const [website, setWebsite] = useState("")
+  const [captcha, setCaptcha] = useState(() => generateCaptcha())
+  const [captchaInput, setCaptchaInput] = useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,8 +55,22 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setError("")
+
+    if (website.trim() !== "") {
+      // Bot caught by honeypot — silently succeed
+      setIsSubmitted(true)
+      return
+    }
+
+    if (parseInt(captchaInput, 10) !== captcha.answer) {
+      setError("Incorrect answer to the verification question. Please try again.")
+      setCaptcha(generateCaptcha())
+      setCaptchaInput("")
+      return
+    }
+
+    setIsSubmitting(true)
 
     const payload = {
       name: `${firstName} ${lastName}`.trim(),
@@ -68,6 +93,8 @@ export function ContactForm() {
       const data = await res.json()
       if (data.success === "true" || data.success === true) {
         setIsSubmitted(true)
+        setCaptcha(generateCaptcha())
+        setCaptchaInput("")
       } else {
         setError(data.message || "Something went wrong. Please try again.")
       }
@@ -187,11 +214,55 @@ export function ContactForm() {
           />
         </div>
 
+        {/* Honeypot field — hidden from real users */}
+        <div className="hidden" aria-hidden="true">
+          <Label htmlFor="website">Website</Label>
+          <Input
+            id="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={e => setWebsite(e.target.value)}
+          />
+        </div>
+
+        {/* Simple math CAPTCHA */}
+        <div className="space-y-2">
+          <Label htmlFor="captcha">
+            Verification: what is {captcha.a} + {captcha.b}?
+          </Label>
+          <div className="flex gap-2">
+            <Input
+              id="captcha"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              placeholder="Your answer"
+              required
+              className="bg-background"
+              value={captchaInput}
+              onChange={e => setCaptchaInput(e.target.value)}
+            />
+            <button
+              type="button"
+              onClick={() => {
+                setCaptcha(generateCaptcha())
+                setCaptchaInput("")
+              }}
+              aria-label="Refresh verification question"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-muted-foreground hover:text-foreground"
+            >
+              <RefreshCw className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
         {error && <div className="text-red-500 text-sm">{error}</div>}
 
-        <Button 
-          type="submit" 
-          size="lg" 
+        <Button
+          type="submit"
+          size="lg"
           className="w-full"
           disabled={isSubmitting}
         >

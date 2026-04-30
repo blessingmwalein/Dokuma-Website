@@ -5,7 +5,7 @@ import PageBanner, { type BannerSlide } from "@/components/page-banner"
 const slides: BannerSlide[] = [
   {
     id: 1,
-    image: "/images/hero-bg.jpg",
+    image: "/images/hero-bg.png",
     subtitle: "Get in Touch",
     title: "Let's Build the Future Together",
     description:

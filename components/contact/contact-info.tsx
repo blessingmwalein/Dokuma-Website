@@ -1,29 +1,22 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Mail, Phone, Clock, MessageCircle, Globe, Shield } from "lucide-react"
+import { Mail, Phone, Clock, Globe, Shield } from "lucide-react"
 
 const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
     description: "Our team typically responds within 24 hours",
-    value: "info@dokuma.co.zw",
-    href: "mailto:info@dokuma.co.zw",
+    value: "hello@dokuma.co.zw",
+    href: "mailto:hello@dokuma.co.zw",
   },
   {
     icon: Phone,
     title: "Call Us",
     description: "Mon-Fri from 8am to 5pm CAT",
-    value: "+263 242 123 456",
-    href: "tel:+263242123456",
-  },
-  {
-    icon: MessageCircle,
-    title: "Live Chat",
-    description: "Available during business hours",
-    value: "Start a conversation",
-    href: "#",
+    value: "+263 77 259 5347",
+    href: "tel:+263772595347",
   },
   {
     icon: Clock,
@@ -38,7 +31,7 @@ const features = [
   {
     icon: Globe,
     title: "Pan-African Reach",
-    description: "Supporting clients across Zimbabwe, Rwanda, and beyond",
+    description: "Supporting clients across Zimbabwe and beyond",
   },
   {
     icon: Shield,

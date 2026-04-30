@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowRight } from "lucide-react"
+import { Mail, MapPin, Linkedin, Twitter, ArrowRight } from "lucide-react"
 
 const footerLinks = {
   company: [
@@ -44,9 +44,8 @@ export default function Footer() {
                 className="w-auto h-8 brightness-0 invert"
               />
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
-              Shaping Africa&apos;s digital future through innovative technology
-              solutions for governments and enterprises.
+            <p className="text-white text-base font-semibold leading-snug mb-6 max-w-sm">
+              Shaping Africa&apos;s Digital Future.
             </p>
             
             {/* CTA Button */}
@@ -67,13 +66,6 @@ export default function Footer() {
               >
                 <Mail className="w-4 h-4" />
                 hello@dokuma.co.zw
-              </a>
-              <a
-                href="tel:+263772595347"
-                className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                +263 77 259 5347
               </a>
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
@@ -139,7 +131,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/60">
-            &copy; {new Date().getFullYear()} Dokuma Digital. All rights reserved.
+            &copy; {new Date().getFullYear()} Dokuma. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

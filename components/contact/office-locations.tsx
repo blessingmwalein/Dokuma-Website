@@ -7,20 +7,11 @@ const offices = [
   {
     country: "Zimbabwe",
     city: "Harare",
-    address: "123 Samora Machel Avenue",
-    building: "Eastgate Building, 5th Floor",
-    postal: "P.O. Box 1234, Harare",
+    address: "78 Piers Road",
+    building: "Borrowdale, Harare",
+    postal: "Zimbabwe",
     description: "Our headquarters and primary operations center",
     isPrimary: true,
-  },
-  {
-    country: "Rwanda",
-    city: "Kigali",
-    address: "KG 7 Ave, Kigali Heights",
-    building: "Tower B, 8th Floor",
-    postal: "P.O. Box 5678, Kigali",
-    description: "Regional office serving East Africa",
-    isPrimary: false,
   },
 ]
 
@@ -59,12 +50,12 @@ export function OfficeLocations() {
             Visit Us
           </h2>
           <p className="animate-on-scroll text-lg text-muted-foreground opacity-0 [animation-delay:200ms]">
-            With offices in Zimbabwe and Rwanda, we&apos;re strategically positioned 
-            to serve clients across the African continent.
+            Headquartered in Harare, we&apos;re strategically positioned to serve
+            clients across the African continent.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+        <div className="mx-auto grid max-w-2xl gap-6 lg:gap-8">
           {offices.map((office, index) => (
             <div
               key={index}

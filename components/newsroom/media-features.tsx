@@ -5,44 +5,36 @@ import { ExternalLink, Calendar } from "lucide-react"
 
 const mediaFeatures = [
   {
-    title: "Zimbabwe's Digital Land Revolution",
+    title: "IT firm wins deeds tender",
     outlet: "The Herald",
-    date: "2024-03-10",
-    link: "#",
+    date: "2024-08-15",
+    link: "https://www.heraldonline.co.zw/it-firm-wins-deeds-tender/",
     excerpt:
-      "How Dokuma is transforming property rights and land administration in Zimbabwe through innovative digital solutions.",
+      "Dokuma awarded the government tender to digitise Zimbabwe's property deeds, marking a major step in the country's land administration modernisation.",
   },
   {
-    title: "Tech Innovation Driving Government Efficiency",
-    outlet: "TechZim",
-    date: "2024-02-15",
-    link: "#",
+    title: "CTC evaluates CBZ Holdings' proposed tech firm acquisition",
+    outlet: "The Herald",
+    date: "2024-09-20",
+    link: "https://www.heraldonline.co.zw/ctc-evaluates-cbz-holdings-proposed-tech-firm-acquisition/",
     excerpt:
-      "Profile of Dokuma's role in modernizing public sector services across Africa with enterprise-grade digital platforms.",
+      "The Competition and Tariff Commission reviews CBZ Holdings' proposed acquisition of a stake in the technology firm behind Zimbabwe's deeds digitisation programme.",
   },
   {
-    title: "Securing Land Rights Through Technology",
-    outlet: "African Business Magazine",
-    date: "2024-01-20",
-    link: "#",
+    title: "CBZ buys into tech firm awarded govt contract to digitise Zimbabwe's property deeds",
+    outlet: "NewZwire",
+    date: "2024-09-25",
+    link: "https://newzwire.live/cbz-buys-into-tech-firm-awarded-govt-contract-to-digitise-zimbabwes-property-deeds/",
     excerpt:
-      "Feature on digital land administration systems and their economic impact on communities across the continent.",
+      "CBZ Holdings strengthens its position in the digital economy by investing in the technology firm leading the country's title deeds digitisation rollout.",
   },
   {
-    title: "Rwanda's Digital Archive Preservation Efforts",
-    outlet: "Rwanda Today",
-    date: "2023-12-08",
-    link: "#",
+    title: "Digital title deeds: Managing risk, building confidence",
+    outlet: "The Herald",
+    date: "2024-10-10",
+    link: "https://www.heraldonline.co.zw/digital-title-deeds-managing-risk-building-confidence/",
     excerpt:
-      "Coverage of the Gacaca Archive Project and its significance in preserving Rwanda's judicial history.",
-  },
-  {
-    title: "The Future of E-Government in Africa",
-    outlet: "IT News Africa",
-    date: "2023-11-15",
-    link: "#",
-    excerpt:
-      "Analysis of how companies like Dokuma are leading the charge in digital transformation across the continent.",
+      "An in-depth look at how digital title deeds reduce fraud, improve transparency, and rebuild public confidence in property ownership records.",
   },
 ]
 

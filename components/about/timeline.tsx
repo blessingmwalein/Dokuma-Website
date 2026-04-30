@@ -41,9 +41,9 @@ const milestones = [
   },
   {
     year: "2025",
-    title: "Fleet & Connectivity Solutions",
-    desc: "Delivered a fleet management system for 3,000+ agricultural tractors and launched the Starlink billing platform for AuraGRP, managing 10,000+ kits in real time.",
-    stat: "13,000+ Assets",
+    title: "Connectivity at Scale",
+    desc: "Launched the Starlink billing and customer management platform for AuraGRP, supporting 2,000+ customers and 10,000+ Starlink kits monitored in real time.",
+    stat: "10,000+ Kits Live",
   },
 ]
 

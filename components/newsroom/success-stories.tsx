@@ -44,14 +44,6 @@ const successStories = [
       "An inside look at the massive operation to digitize the Gacaca Archive in Rwanda.",
     featured: false,
   },
-  {
-    title: "Fleet Management in Action: Zimbabwe's Agricultural Revolution",
-    type: "Case Study",
-    duration: "7:30",
-    description:
-      "How real-time tracking transformed agricultural equipment distribution across the country.",
-    featured: false,
-  },
 ]
 
 const typeColors: Record<string, string> = {

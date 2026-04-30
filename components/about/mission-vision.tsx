@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { Eye, Target, Quote } from "lucide-react"
+import { Eye, Target, Compass } from "lucide-react"
 
 export default function MissionVision() {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,7 +25,24 @@ export default function MissionVision() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden py-24 md:py-32 px-6 lg:px-8 bg-muted/30"
+    >
+      {/* Decorative background pattern */}
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+      </div>
+      <div className="pointer-events-none absolute -left-32 top-32 -z-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 bottom-32 -z-10 h-72 w-72 rounded-full bg-chart-1/10 blur-3xl" />
+
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div
@@ -34,93 +51,86 @@ export default function MissionVision() {
           }`}
         >
           <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-4">
-            Vision, Mission &amp; Values
+            Vision &amp; Mission
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-light leading-tight text-foreground tracking-tight">
             Shaping Africa&apos;s Digital Future
           </h2>
-        </div>
-
-        {/* CEO Message */}
-        <div
-          className={`relative bg-background rounded-2xl border border-border/50 p-8 md:p-12 mb-12 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <div className="absolute -top-5 left-8 md:left-12 w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-            <Quote className="w-5 h-5 text-primary-foreground" />
-          </div>
-
-          <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-5">
-            CEO Message
-          </p>
-
-          <div className="space-y-5 text-muted-foreground leading-relaxed max-w-3xl">
-            <p>
-              At Dokuma, we are driven by a clear purpose: to enable meaningful
-              digital transformation across Africa. Our Vision, Mission, and Values
-              are not just statements&mdash;they are the foundation of how we think,
-              act, and deliver impact every day.
-            </p>
-            <p>
-              As we grow, it is essential that every member of our team aligns with
-              these principles. They guide how we serve our clients, how we
-              collaborate with each other, and how we build sustainable solutions
-              that make a difference.
-            </p>
-            <p>
-              I encourage each of you to internalize these values and reflect them
-              in your daily work. Together, we will build a company that not only
-              succeeds commercially but also leaves a lasting legacy across the
-              continent.
-            </p>
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-border/50 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-primary/[0.08] flex items-center justify-center">
-              <span className="text-sm font-semibold text-primary">WM</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">Webster Maposa</p>
-              <p className="text-xs text-muted-foreground">Chief Executive Officer</p>
-            </div>
-          </div>
+          <div className="mx-auto mt-6 h-px w-20 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
         </div>
 
         {/* Vision + Mission */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          {/* Vision card */}
           <div
-            className={`p-10 md:p-12 bg-background rounded-2xl border border-border/50 hover:border-primary/25 hover-lift transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-700 delay-200 hover:-translate-y-1 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/[0.08] flex items-center justify-center mb-7">
-              <Eye className="w-6 h-6 text-primary" />
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
+            <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
+              01
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
-              Vision
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              To be Africa&apos;s leading catalyst for digital transformation.
-            </p>
+
+            <div className="relative p-10 md:p-12">
+              <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
+                <Eye className="h-6 w-6 text-white" />
+              </div>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/70 font-semibold mb-3">
+                Our Vision
+              </p>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
+                Africa&apos;s leading catalyst for digital transformation.
+              </h3>
+              <p className="text-white/80 leading-relaxed">
+                Building a continent where technology empowers every government,
+                enterprise, and citizen to thrive in the digital age.
+              </p>
+            </div>
           </div>
 
+          {/* Mission card */}
           <div
-            className={`p-10 md:p-12 bg-background rounded-2xl border border-border/50 hover:border-primary/25 hover-lift transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            className={`group relative overflow-hidden rounded-3xl border border-border/60 bg-background shadow-lg transition-all duration-700 delay-300 hover:-translate-y-1 hover:border-primary/30 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/[0.08] flex items-center justify-center mb-7">
-              <Target className="w-6 h-6 text-primary" />
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10" />
+            <div className="absolute right-6 top-6 text-7xl font-bold text-primary/10 leading-none select-none">
+              02
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-4 tracking-tight">
-              Mission
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              We deliver software and technology solutions that reduce costs,
-              accelerate service delivery, and improve decision-making.
-            </p>
+
+            <div className="relative p-10 md:p-12">
+              <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+                <Target className="h-6 w-6 text-primary" />
+              </div>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
+                Our Mission
+              </p>
+              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-5 tracking-tight text-balance">
+                Software &amp; technology that delivers measurable impact.
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We deliver solutions that reduce costs, accelerate service
+                delivery, and improve decision-making — at scale, across the
+                continent.
+              </p>
+            </div>
           </div>
+        </div>
+
+        {/* Bridge to Values */}
+        <div
+          className={`mt-16 md:mt-20 flex flex-col items-center text-center transition-all duration-700 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-background border border-border/60 shadow-sm">
+            <Compass className="h-5 w-5 text-primary" />
+          </div>
+          <p className="max-w-xl text-sm text-muted-foreground leading-relaxed">
+            Anchored by a set of values that guide every decision we make.
+          </p>
         </div>
       </div>
     </section>

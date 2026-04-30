@@ -4,11 +4,11 @@ import Image from "next/image"
 import { useRef, useEffect, useState } from "react"
 
 const partners = [
-  { src: "/justice-logo-4.png", alt: "Ministry of Justice", width: 160, height: 80 },
-  { src: "/lands.png", alt: "Ministry of Lands", width: 150, height: 80 },
-  { src: "/land-tenure.png", alt: "Land Tenure Implementation Committee", width: 140, height: 80 },
-  { src: "/housing-social.png", alt: "Ministry of National Housing", width: 150, height: 80 },
-  { src: "/public-works.jpg", alt: "Ministry of Local Government and Public Works", width: 150, height: 80 },
+  { src: "/justice-logo-4.png", alt: "Ministry of Justice" },
+  { src: "/lands.png", alt: "Ministry of Lands" },
+  { src: "/land-tenure.png", alt: "Land Tenure Implementation Committee" },
+  { src: "/housing-social.png", alt: "Ministry of National Housing" },
+  { src: "/public-works.jpg", alt: "Ministry of Local Government and Public Works" },
 ]
 
 export default function PartnersSection() {
@@ -53,18 +53,18 @@ export default function PartnersSection() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="animate-scroll-x flex items-center whitespace-nowrap gap-10">
+          <div className="animate-scroll-x flex items-center whitespace-nowrap gap-8">
             {[...partners, ...partners].map((partner, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 flex items-center justify-center h-40 w-64 px-6"
+                className="relative flex-shrink-0 h-32 w-56 flex items-center justify-center px-4"
               >
                 <Image
                   src={partner.src}
                   alt={partner.alt}
-                  width={partner.width * 2}
-                  height={partner.height * 2}
-                  className="max-h-28 max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
+                  fill
+                  sizes="224px"
+                  className="object-contain p-3 transition-transform duration-300 hover:scale-105"
                 />
               </div>
             ))}

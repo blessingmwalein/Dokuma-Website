@@ -5,32 +5,30 @@ import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { useEffect, useState, useCallback } from "react"
 
+const TAGLINE = "Shaping Africa's Digital Future"
+
 const slides = [
   {
     id: 1,
     image: "/images/hero-bg.png",
-    title: "Shaping Africa's Digital Future",
     subtitle: "Your Fully Integrated Technology Partner",
     description: "Enterprise-grade solutions that empower governments and institutions with secure, scalable, and intelligent systems.",
   },
   {
     id: 2,
     image: "/images/slide-digitisation.jpg",
-    title: "Document Digitisation",
     subtitle: "60 Million+ Pages Processed",
     description: "Converting physical archives into searchable, secure digital assets with AI-powered indexing and retrieval systems.",
   },
   {
     id: 3,
     image: "/images/slide-cloud.jpg",
-    title: "Cloud Infrastructure",
     subtitle: "500TB+ Secure Data Storage",
     description: "Enterprise-grade cloud solutions with military-grade encryption, ensuring your data is always protected and accessible.",
   },
   {
     id: 4,
     image: "/images/slide-egovernment.jpg",
-    title: "E-Government Solutions",
     subtitle: "Powering Digital Services",
     description: "Streamlining public services with citizen-centric digital platforms that enhance efficiency and transparency.",
   },
@@ -76,7 +74,7 @@ export default function HeroSection() {
         >
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={TAGLINE}
             fill
             className="object-cover"
             priority={index === 0}
@@ -96,7 +94,16 @@ export default function HeroSection() {
 
             {/* Main content */}
             <div className="text-center max-w-4xl mx-auto">
-              {/* Slide content with animation */}
+              {/* Persistent tagline (H1) */}
+              <h1
+                className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-8 transition-all duration-700 delay-200 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+              >
+                <span className="text-balance">{TAGLINE.toUpperCase()}</span>
+              </h1>
+
+              {/* Rotating subtitle + description */}
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
@@ -115,14 +122,6 @@ export default function HeroSection() {
                       >
                         {slide.subtitle}
                       </p>
-                      
-                      <h1
-                        className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6 transition-all duration-700 delay-200 ${
-                          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                        }`}
-                      >
-                        <span className="text-balance">{slide.title.toUpperCase()}</span>
-                      </h1>
 
                       <p
                         className={`text-base md:text-lg text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-300 ${

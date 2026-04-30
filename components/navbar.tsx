@@ -4,12 +4,12 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
+import { Menu, X, ArrowRight } from "lucide-react"
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/solutions", label: "Solutions", hasDropdown: true },
+  { href: "/solutions", label: "Solutions" },
   { href: "/projects", label: "Projects" },
   { href: "/newsroom", label: "Newsroom" },
 ]
@@ -73,9 +73,6 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-                {link.hasDropdown && (
-                  <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                )}
               </Link>
             ))}
           </div>

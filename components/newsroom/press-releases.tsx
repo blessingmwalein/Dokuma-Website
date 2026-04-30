@@ -28,14 +28,6 @@ const pressReleases = [
     category: "Company News",
     featured: false,
   },
-  {
-    title: "New Fleet Management System for Agricultural Sector",
-    date: "2023-11-05",
-    excerpt:
-      "Dokuma delivers comprehensive tracking system for over 3,000 agricultural tractors across Zimbabwe.",
-    category: "Project Update",
-    featured: false,
-  },
 ]
 
 const categoryColors: Record<string, string> = {
