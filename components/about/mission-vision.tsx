@@ -46,9 +46,8 @@ export default function MissionVision() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div
-          className={`max-w-3xl mx-auto text-center mb-16 md:mb-20 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`max-w-3xl mx-auto text-center mb-16 md:mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-4">
             Vision &amp; Mission
@@ -63,9 +62,8 @@ export default function MissionVision() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Vision card */}
           <div
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-700 delay-200 hover:-translate-y-1 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-700 delay-200 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
             <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
@@ -80,7 +78,7 @@ export default function MissionVision() {
                 Our Vision
               </p>
               <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
-                Africa&apos;s leading catalyst for digital transformation.
+                To be Africa’s leading catalyst for digital transformation.
               </h3>
               {/* <p className="text-white/80 leading-relaxed">
                 Building a continent where technology empowers every government,
@@ -91,9 +89,8 @@ export default function MissionVision() {
 
           {/* Mission card */}
           <div
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-chart-2 to-chart-3 text-white shadow-xl shadow-chart-2/20 transition-all duration-700 delay-300 hover:-translate-y-1 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-chart-2 to-chart-3 text-white shadow-xl shadow-chart-2/20 transition-all duration-700 delay-300 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
             <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
@@ -108,7 +105,9 @@ export default function MissionVision() {
                 Our Mission
               </p>
               <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
-                Software &amp; technology that delivers measurable impact.
+                We deliver software and technology solutions that reduce costs, accelerate service
+                delivery, and improve decision-making.
+
               </h3>
               {/* <p className="text-white/80 leading-relaxed">
                 We deliver solutions that reduce costs, accelerate service
@@ -121,9 +120,8 @@ export default function MissionVision() {
 
         {/* Bridge to Values */}
         <div
-          className={`mt-16 md:mt-20 flex flex-col items-center text-center transition-all duration-700 delay-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`mt-16 md:mt-20 flex flex-col items-center text-center transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-background border border-border/60 shadow-sm">
             <Compass className="h-5 w-5 text-primary" />
