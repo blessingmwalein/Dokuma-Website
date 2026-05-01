@@ -69,6 +69,7 @@ export default function MissionVision() {
             <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
               01
             </div>
+            {/* yes */}
 
             <div className="relative p-10 md:p-12">
               <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
