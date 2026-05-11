@@ -17,7 +17,7 @@ const slides: BannerSlide[] = [
     subtitle: "Our Story",
     title: "A Vision for Digital Africa",
     description:
-      "From Harare to Kigali, we partner with governments and enterprises to build secure, scalable systems that serve millions.",
+      "From Harare, we partner with governments and enterprises to build secure, scalable systems that serve millions.",
   },
   {
     id: 3,

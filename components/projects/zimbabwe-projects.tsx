@@ -23,7 +23,7 @@ const zimbabweProjects = [
       "Online Platform",
       "Property Rights",
     ],
-    link: "https://deeds.gov.zw",
+    // link: "https://deeds.gov.zw",
   },
   {
     title: "Toruka Data Centre",

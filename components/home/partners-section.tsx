@@ -2,20 +2,32 @@
 
 import Image from "next/image"
 import { useRef, useEffect, useState } from "react"
+import useEmblaCarousel from "embla-carousel-react"
 
 const partners = [
-  { src: "/justice-logo-4.png", alt: "Ministry of Justice" },
-  { src: "/lands.png", alt: "Ministry of Lands" },
-  { src: "/land-tenure.png", alt: "Land Tenure Implementation Committee" },
-  { src: "/housing-social.png", alt: "Ministry of National Housing" },
-  { src: "/public-works.png", alt: "Ministry of Local Government and Public Works" },
+  { src: "/partners/ministry_of_justice.png", alt: "Ministry of Justice" },
+  { src: "/partners/ministryof_lands.png", alt: "Ministry of Lands" },
+  { src: "/partners/land_tenure.png", alt: "Land Tenure Implementation Committee" },
+  { src: "/partners/natisan_housing.png", alt: "Ministry of National Housing" },
+  { src: "/partners/public_works.png", alt: "Ministry of Local Government and Public Works" },
 ]
 
 export default function PartnersSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  
+  // Embla Carousel for mobile
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    duration: 30, // Smooth transition
+  })
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,8 +41,21 @@ export default function PartnersSection() {
       observer.observe(sectionRef.current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+      observer.disconnect()
+    }
   }, [])
+
+  // Auto-play for mobile slider
+  useEffect(() => {
+    if (emblaApi && isMobile) {
+      const intervalId = setInterval(() => {
+        emblaApi.scrollNext()
+      }, 2000) // Change every 2 seconds as requested
+      return () => clearInterval(intervalId)
+    }
+  }, [emblaApi, isMobile])
 
   return (
     <section ref={sectionRef} className="py-12 md:py-16 px-6 lg:px-8 bg-background">
@@ -47,28 +72,53 @@ export default function PartnersSection() {
           <div className="mt-4 mx-auto w-16 h-px bg-primary/30" />
         </div>
 
-        {/* Scrolling logos */}
+        {/* Logo display */}
         <div
-          className={`overflow-hidden transition-all duration-700 delay-150 ${
+          className={`transition-all duration-700 delay-150 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="animate-scroll-x flex items-center whitespace-nowrap gap-8">
-            {[...partners, ...partners].map((partner, i) => (
-              <div
-                key={i}
-                className="relative flex-shrink-0 h-32 w-56 flex items-center justify-center px-4"
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  fill
-                  sizes="224px"
-                  className="object-contain p-3 transition-transform duration-300 hover:scale-105"
-                />
+          {isMobile ? (
+            /* Mobile Slider */
+            <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+              <div className="flex">
+                {partners.map((partner, i) => (
+                  <div
+                    key={i}
+                    className="flex-[0_0_100%] min-w-0 flex items-center justify-center h-48 px-4"
+                  >
+                    <Image
+                      src={partner.src}
+                      alt={partner.alt}
+                      width={320}
+                      height={128}
+                      className="object-contain h-32 w-auto max-w-[90%] transition-transform duration-300"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            /* Desktop Marquee */
+            <div className="overflow-hidden">
+              <div className="animate-scroll-x flex items-center whitespace-nowrap gap-8">
+                {[...partners, ...partners].map((partner, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-64 h-32 flex items-center justify-center px-4"
+                  >
+                    <Image
+                      src={partner.src}
+                      alt={partner.alt}
+                      width={240}
+                      height={96}
+                      className="object-contain h-20 w-auto max-w-full transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

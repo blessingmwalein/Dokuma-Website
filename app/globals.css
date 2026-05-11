@@ -198,7 +198,13 @@ html {
 }
 
 .animate-scroll-x {
-  animation: scroll-x 40s linear infinite;
+  animation: scroll-x 6s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-scroll-x {
+    animation: scroll-x 40s linear infinite;
+  }
 }
 
 .animate-scroll-x:hover {

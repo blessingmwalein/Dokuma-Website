@@ -15,9 +15,9 @@ const slides: BannerSlide[] = [
     id: 2,
     image: "/images/slide-egovernment.jpg",
     subtitle: "Partner With Us",
-    title: "Two Countries, One Mission",
+    title: "One Community, One Mission",
     description:
-      "With offices in Harare and Kigali, we're positioned to serve governments and enterprises across the continent.",
+      "With head offices in Harare, we're positioned to serve governments and enterprises across the continent.",
   },
   {
     id: 3,

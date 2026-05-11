@@ -28,7 +28,7 @@ const rwandaProjects = [
       "Digitization of over 60 million hand-written pages of Gacaca court records for preservation and digital accessibility.",
     description: [
       "Digitization of Gacaca Archive records on behalf of Rwanda's Government - a set of over 60 million hand-written pages of documents to preserve physically and digitally.",
-      "Dokuma through Aegis Consult has customized a digitization workflow web application that helped in the digitization of archives. Dokuma is now working on indexing the digitized documents to be retrieved and accessible by different stakeholders in the judiciary, education, and other interested parties via a web interface.",
+      "Dokuma through Aegis Consult has customized a digitization workflow web application that helped in the digitization of archives. Dokuma worked on indexing the digitized documents to be retrieved and accessible by different stakeholders in the judiciary, education, and other interested parties via a web interface.",
     ],
     tags: [
       "Archive Digitization",
@@ -78,9 +78,8 @@ export default function RwandaProjects() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div
-          className={`mb-14 flex items-center gap-5 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-          }`}
+          className={`mb-14 flex items-center gap-5 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
         >
           <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center">
             <span className="text-2xl font-semibold">RW</span>
@@ -100,11 +99,10 @@ export default function RwandaProjects() {
           {rwandaProjects.map((project, i) => (
             <div
               key={i}
-              className={`transition-all duration-700 ${
-                isVisible
+              className={`transition-all duration-700 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
-              }`}
+                }`}
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <ProjectCard project={project} />
