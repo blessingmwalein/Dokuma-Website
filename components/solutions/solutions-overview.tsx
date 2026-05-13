@@ -6,8 +6,13 @@ import {
   Database,
   Cloud,
   CreditCard,
-  Shield,
   Lock,
+  Landmark,
+  Fingerprint,
+  ScrollText,
+  ShoppingCart,
+  Server,
+  Lightbulb,
 } from "lucide-react"
 
 const solutions = [
@@ -36,10 +41,46 @@ const solutions = [
     desc: "Secure payment platforms enabling efficient financial transactions across digital services for governments and enterprises.",
   },
   {
+    title: "eGovernment Platforms",
+    icon: Landmark,
+    tagline: "Modernize Public Service Delivery",
+    desc: "Integrated e-government systems with citizen portals, online licensing, and digital records management to improve transparency and engagement.",
+  },
+  {
+    title: "Identity & Membership Systems",
+    icon: Fingerprint,
+    tagline: "Secure Digital Identity",
+    desc: "Secure identity platforms for citizen identity management, membership systems, and access control with biometric verification.",
+  },
+  {
+    title: "Licensing, Registration & Permit Systems",
+    icon: ScrollText,
+    tagline: "Streamline Regulatory Processes",
+    desc: "Digital platforms that streamline business licensing, permit issuance, professional registrations, and regulatory approvals.",
+  },
+  {
+    title: "e-Procurement Systems",
+    icon: ShoppingCart,
+    tagline: "Transparent Digital Procurement",
+    desc: "Secure digital procurement platforms automating tender publishing, supplier registration, bid submission, and contract management.",
+  },
+  {
+    title: "ICT Infrastructure & Hardware",
+    icon: Server,
+    tagline: "Enterprise-Grade ICT Solutions",
+    desc: "Complete ICT infrastructure including enterprise servers, storage, networking, end-user devices, and system integration.",
+  },
+  {
     title: "Cybersecurity Services",
     icon: Lock,
     tagline: "Protect Critical Digital Assets",
     desc: "Comprehensive cybersecurity solutions protecting digital systems and sensitive information in complex threat environments.",
+  },
+  {
+    title: "Digital Transformation Consultancy",
+    icon: Lightbulb,
+    tagline: "Strategy & Implementation Expertise",
+    desc: "Strategic guidance on digital strategy, technology architecture, systems integration, and change management for sustainable transformation.",
   },
 ]
 

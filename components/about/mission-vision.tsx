@@ -59,38 +59,33 @@ export default function MissionVision() {
         </div>
 
         {/* Vision + Mission */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Vision card */}
           <div
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-700 delay-200 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`group relative flex h-full flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/20 transition-all duration-700 delay-200 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
             <div className="absolute right-6 top-6 text-7xl font-bold text-white/10 leading-none select-none">
               01
             </div>
-            {/* yes */}
 
-            <div className="relative p-10 md:p-12">
+            <div className="relative flex flex-1 flex-col justify-center p-10 md:p-12">
               <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
                 <Eye className="h-6 w-6 text-white" />
               </div>
               <p className="text-[11px] uppercase tracking-[0.25em] text-white/70 font-semibold mb-3">
                 Our Vision
               </p>
-              <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-balance">
                 To be Africa’s leading catalyst for digital transformation.
               </h3>
-              {/* <p className="text-white/80 leading-relaxed">
-                Building a continent where technology empowers every government,
-                enterprise, and citizen to thrive in the digital age.
-              </p> */}
             </div>
           </div>
 
           {/* Mission card */}
           <div
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-chart-2 to-chart-3 text-white shadow-xl shadow-chart-2/20 transition-all duration-700 delay-300 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`group relative flex h-full flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-chart-2 to-chart-3 text-white shadow-xl shadow-chart-2/20 transition-all duration-700 delay-300 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-2xl transition-all duration-500 group-hover:bg-white/20" />
@@ -98,23 +93,16 @@ export default function MissionVision() {
               02
             </div>
 
-            <div className="relative p-10 md:p-12">
+            <div className="relative flex flex-1 flex-col justify-center p-10 md:p-12">
               <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
                 <Target className="h-6 w-6 text-white" />
               </div>
               <p className="text-[11px] uppercase tracking-[0.25em] text-white/70 font-semibold mb-3">
                 Our Mission
               </p>
-              <h3 className="text-2xl md:text-3xl font-semibold mb-5 tracking-tight text-balance">
-                We deliver software and technology solutions that reduce costs, accelerate service
-                delivery, and improve decision-making.
-
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-balance">
+                We deliver software and technology solutions that reduce costs, accelerate service delivery, and improve decision-making.
               </h3>
-              {/* <p className="text-white/80 leading-relaxed">
-                We deliver solutions that reduce costs, accelerate service
-                delivery, and improve decision-making — at scale, across the
-                continent.
-              </p> */}
             </div>
           </div>
         </div>

@@ -39,7 +39,7 @@ export function OfficeLocations() {
       ref={sectionRef}
       className="border-t border-border bg-muted/30 py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center lg:mb-16">
           <p className="animate-on-scroll mb-3 text-sm font-semibold uppercase tracking-wider text-primary opacity-0">
             Our Offices

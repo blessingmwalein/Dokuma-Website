@@ -19,7 +19,7 @@ export default function ContactPage() {
       <Navbar />
       <ContactHero />
       <div id="contact-form" className="scroll-mt-24 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <ContactForm />
             <ContactInfo />

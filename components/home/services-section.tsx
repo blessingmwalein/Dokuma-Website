@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, FileText, Server, Shield, Database, CreditCard, ClipboardList } from "lucide-react"
+import { ArrowRight, FileText, Server, Shield, Database, CreditCard, Landmark } from "lucide-react"
 import { useRef, useEffect, useState } from "react"
 
 const solutions = [
@@ -30,10 +30,16 @@ const solutions = [
     link: "/solutions#solution-3",
   },
   {
+    icon: Landmark,
+    title: "eGovernment Platforms",
+    description: "Integrated e-government systems modernizing public service delivery through citizen portals, online licensing, and digital records management.",
+    link: "/solutions#solution-4",
+  },
+  {
     icon: Shield,
     title: "Cybersecurity Services",
     description: "Comprehensive protection via security risk assessments, penetration testing, threat monitoring, and security architecture implementation.",
-    link: "/solutions#solution-4",
+    link: "/solutions#solution-9",
   },
 ]
 
@@ -80,13 +86,13 @@ export default function ServicesSection() {
               >
                 Solutions
               </Link>
-              <span
+              {/* <span
                 className={`text-3xl md:text-4xl font-semibold text-muted-foreground/30 transition-all duration-700 delay-100 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
                 Industries
-              </span>
+              </span> */}
             </div>
           </div>
           <Link

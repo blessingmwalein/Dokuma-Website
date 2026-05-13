@@ -21,12 +21,12 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <PartnersSection />
       <ServicesSection />
       <ImpactMetrics />
       {/* <AboutPreview /> */}
       {/* <CEOMessage /> */}
       <FinalCTA />
+      <PartnersSection />
       <Footer />
     </div>
   )

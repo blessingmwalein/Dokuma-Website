@@ -6,7 +6,6 @@ import {
   ExternalLink,
   ChevronDown,
   Building2,
-  Activity,
   ArrowUpRight,
 } from "lucide-react"
 
@@ -20,14 +19,6 @@ interface Project {
   description: string[]
   tags: string[]
   link?: string
-}
-
-const statusColors: Record<string, string> = {
-  Active: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:bg-emerald-500/15 dark:text-emerald-400",
-  "In Progress": "bg-amber-500/10 text-amber-600 border-amber-500/20 dark:bg-amber-500/15 dark:text-amber-400",
-  "In Development": "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:bg-blue-500/15 dark:text-blue-400",
-  Delivered: "bg-primary/10 text-primary border-primary/20",
-  Live: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:bg-emerald-500/15 dark:text-emerald-400",
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -46,15 +37,6 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="min-w-0">
           {/* Meta row */}
           <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span
-              className={`inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-medium tracking-wide rounded-full border ${
-                statusColors[project.status] ||
-                "bg-muted text-muted-foreground border-border"
-              }`}
-            >
-              <Activity className="w-3 h-3" />
-              {project.status}
-            </span>
             <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
               <MapPin className="w-3.5 h-3.5" />
               <span className="font-medium">{project.country}</span>

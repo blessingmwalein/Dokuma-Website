@@ -6,10 +6,9 @@ import useEmblaCarousel from "embla-carousel-react"
 
 const partners = [
   { src: "/partners/ministry_of_justice.png", alt: "Ministry of Justice" },
-  { src: "/partners/ministryof_lands.png", alt: "Ministry of Lands" },
   { src: "/partners/land_tenure.png", alt: "Land Tenure Implementation Committee" },
-  { src: "/partners/natisan_housing.png", alt: "Ministry of National Housing" },
-  { src: "/partners/public_works.png", alt: "Ministry of Local Government and Public Works" },
+  { src: "/partners/Aura-Logo.svg", alt: "Aura Group" },
+  { src: "/partners/kwangu.png", alt: "Kwangu" },
 ]
 
 export default function PartnersSection() {
@@ -67,7 +66,7 @@ export default function PartnersSection() {
           }`}
         >
           <p className="text-base md:text-lg uppercase tracking-[0.2em] text-muted-foreground font-semibold">
-            Trusted by Government Institutions
+            Our Partners
           </p>
           <div className="mt-4 mx-auto w-16 h-px bg-primary/30" />
         </div>
@@ -85,14 +84,14 @@ export default function PartnersSection() {
                 {partners.map((partner, i) => (
                   <div
                     key={i}
-                    className="flex-[0_0_100%] min-w-0 flex items-center justify-center h-48 px-4"
+                    className="flex-[0_0_100%] min-w-0 flex items-center justify-center h-48 px-12"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.alt}
                       width={320}
                       height={128}
-                      className="object-contain h-32 w-auto max-w-[90%] transition-transform duration-300"
+                      className="object-contain h-24 w-auto max-w-full transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -105,14 +104,14 @@ export default function PartnersSection() {
                 {[...partners, ...partners].map((partner, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 w-64 h-32 flex items-center justify-center px-4"
+                    className="flex-shrink-0 w-64 h-32 flex items-center justify-center px-8"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.alt}
                       width={240}
                       height={96}
-                      className="object-contain h-20 w-auto max-w-full transition-transform duration-300 hover:scale-105"
+                      className="object-contain h-16 w-auto max-w-full transition-all duration-300 hover:scale-105"
                     />
                   </div>
                 ))}

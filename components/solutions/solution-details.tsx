@@ -7,8 +7,13 @@ import {
   Database,
   Cloud,
   CreditCard,
-  Shield,
   Lock,
+  Landmark,
+  Fingerprint,
+  ScrollText,
+  ShoppingCart,
+  Server,
+  Lightbulb,
   ArrowRight,
   Check,
 } from "lucide-react"
@@ -79,6 +84,86 @@ const solutions = [
       "These systems enable governments and enterprises to improve revenue collection and enable seamless digital transactions.",
   },
   {
+    title: "eGovernment Platforms",
+    icon: Landmark,
+    tagline: "Modernize Public Service Delivery",
+    desc: "Dokuma designs integrated e-government systems that modernize public service delivery, bringing citizen-facing services online and automating government workflows end-to-end.",
+    features: [
+      "Citizen service portals",
+      "Online licensing and registrations",
+      "Digital records management",
+      "Government workflow automation",
+      "Inter-agency systems integration",
+      "Multi-channel service delivery",
+    ],
+    impact:
+      "These systems improve transparency, efficiency, and citizen engagement across public service delivery.",
+  },
+  {
+    title: "Identity & Membership Systems",
+    icon: Fingerprint,
+    tagline: "Secure Digital Identity",
+    desc: "Dokuma develops secure identity platforms used for citizen identity, membership, and access control. Our systems leverage biometric verification and cryptographic authentication to ensure security and privacy.",
+    features: [
+      "Digital citizen identity management",
+      "Membership and association systems",
+      "Employee identity management",
+      "Physical and logical access control",
+      "Biometric verification (fingerprint, facial)",
+      "Cryptographic authentication",
+    ],
+    impact:
+      "Robust identity systems unlock trusted digital services while protecting individuals from fraud and identity theft.",
+  },
+  {
+    title: "Licensing, Registration & Permit Systems",
+    icon: ScrollText,
+    tagline: "Streamline Regulatory Processes",
+    desc: "Dokuma provides digital platforms that streamline regulatory processes such as business licensing, permit issuance, and professional registrations — replacing paper-based workflows with efficient online services.",
+    features: [
+      "Business licensing portals",
+      "Permit issuance and renewals",
+      "Professional registrations",
+      "Regulatory approval workflows",
+      "Integrated payment and fee collection",
+      "Compliance tracking and reporting",
+    ],
+    impact:
+      "These systems reduce bureaucracy and improve efficiency for both governments and citizens.",
+  },
+  {
+    title: "e-Procurement Systems",
+    icon: ShoppingCart,
+    tagline: "Transparent Digital Procurement",
+    desc: "Dokuma delivers secure digital procurement platforms that automate the procurement lifecycle from tender publishing through to contract management — enhancing transparency and reducing corruption risks.",
+    features: [
+      "Online tender publishing",
+      "Supplier registration and onboarding",
+      "Digital bid submission and evaluation",
+      "Contract management",
+      "Procurement payment processing",
+      "Audit trails and reporting",
+    ],
+    impact:
+      "These systems enhance transparency and reduce corruption risks in public and enterprise procurement.",
+  },
+  {
+    title: "ICT Infrastructure & Hardware",
+    icon: Server,
+    tagline: "Enterprise-Grade ICT Solutions",
+    desc: "Dokuma provides complete ICT infrastructure solutions — from enterprise servers and storage to networking and end-user devices — with engineers ensuring every system is optimized for performance and reliability.",
+    features: [
+      "Enterprise servers and storage systems",
+      "Networking infrastructure",
+      "End-user devices and peripherals",
+      "ICT systems integration",
+      "Installation and commissioning",
+      "Maintenance and support",
+    ],
+    impact:
+      "Our engineers ensure all systems are optimized for performance and reliability across the organization.",
+  },
+  {
     title: "Cybersecurity Services",
     icon: Lock,
     tagline: "Protect Critical Digital Assets",
@@ -93,6 +178,22 @@ const solutions = [
     ],
     impact:
       "This ensures organizations remain protected in an increasingly complex cyber threat environment.",
+  },
+  {
+    title: "Digital Transformation Consultancy",
+    icon: Lightbulb,
+    tagline: "Strategy & Implementation Expertise",
+    desc: "Digital transformation requires more than technology — it requires strategy and implementation expertise. Dokuma supports organizations through every stage of their digital journey.",
+    features: [
+      "Digital strategy development",
+      "Technology architecture design",
+      "Systems integration",
+      "Change management and capacity building",
+      "Process re-engineering",
+      "Programme and project delivery",
+    ],
+    impact:
+      "This ensures sustainable and successful digital transformation initiatives for governments and enterprises.",
   },
 ]
 

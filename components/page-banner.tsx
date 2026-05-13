@@ -77,7 +77,7 @@ export default function PageBanner({
       ))}
 
       {/* Content Area */}
-      <div className={`relative z-10 ${minHeightClass} flex items-center justify-center px-4 pt-28 pb-20`}>
+      <div className={`relative z-10 ${minHeightClass} flex items-center justify-center px-6 lg:px-8 py-28`}>
         <div className="w-full max-w-6xl mx-auto">
           <div className="relative border border-white/25 rounded-3xl p-8 md:p-16">
             {/* Corner accents */}
