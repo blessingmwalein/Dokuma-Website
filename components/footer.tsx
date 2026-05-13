@@ -7,7 +7,7 @@ const footerLinks = {
     { label: "About Us", href: "/about" },
     { label: "Solutions", href: "/solutions" },
     { label: "Projects", href: "/projects" },
-    { label: "Newsroom", href: "/newsroom" },
+    // { label: "Newsroom", href: "/newsroom" },
   ],
   solutions: [
     { label: "Digital Land Administration", href: "/solutions#solution-0" },

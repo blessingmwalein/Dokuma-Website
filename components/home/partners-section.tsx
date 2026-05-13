@@ -4,12 +4,55 @@ import Image from "next/image"
 import { useRef, useEffect, useState } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 
-const partners = [
-  { src: "/partners/ministry_of_justice.png", alt: "Ministry of Justice" },
-  { src: "/partners/land_tenure.png", alt: "Land Tenure Implementation Committee" },
-  { src: "/partners/Aura-Logo.svg", alt: "Aura Group" },
-  { src: "/partners/kwangu.png", alt: "Kwangu" },
+type Partner = {
+  src: string
+  alt: string
+  // Optional per-logo size overrides (in px). Tune these to balance logos visually.
+  desktopMaxHeight?: number
+  desktopMaxWidth?: number
+  mobileMaxHeight?: number
+  mobileMaxWidth?: number
+}
+
+const partners: Partner[] = [
+  {
+    src: "/partners/ministry_of_justice.png",
+    alt: "Ministry of Justice",
+    desktopMaxHeight: 160,
+    desktopMaxWidth: 260,
+    mobileMaxHeight: 180,
+    mobileMaxWidth: 300,
+  },
+  {
+    src: "/partners/land_tenure.png",
+    alt: "Land Tenure Implementation Committee",
+    desktopMaxHeight: 80,
+    desktopMaxWidth: 160,
+    mobileMaxHeight: 96,
+    mobileMaxWidth: 192,
+  },
+  {
+    src: "/partners/Aura-Logo.svg",
+    alt: "Aura Group",
+    desktopMaxHeight: 70,
+    desktopMaxWidth: 150,
+    mobileMaxHeight: 84,
+    mobileMaxWidth: 180,
+  },
+  {
+    src: "/partners/kwangu.png",
+    alt: "Kwangu",
+    desktopMaxHeight: 70,
+    desktopMaxWidth: 150,
+    mobileMaxHeight: 84,
+    mobileMaxWidth: 180,
+  },
 ]
+
+const DEFAULT_DESKTOP_MAX_HEIGHT = 80
+const DEFAULT_DESKTOP_MAX_WIDTH = 160
+const DEFAULT_MOBILE_MAX_HEIGHT = 96
+const DEFAULT_MOBILE_MAX_WIDTH = 192
 
 export default function PartnersSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -91,7 +134,11 @@ export default function PartnersSection() {
                       alt={partner.alt}
                       width={320}
                       height={128}
-                      className="object-contain h-24 w-auto max-w-full transition-all duration-300"
+                      className="object-contain w-auto h-auto transition-all duration-300"
+                      style={{
+                        maxHeight: `${partner.mobileMaxHeight ?? DEFAULT_MOBILE_MAX_HEIGHT}px`,
+                        maxWidth: `${partner.mobileMaxWidth ?? DEFAULT_MOBILE_MAX_WIDTH}px`,
+                      }}
                     />
                   </div>
                 ))}
@@ -104,14 +151,18 @@ export default function PartnersSection() {
                 {[...partners, ...partners].map((partner, i) => (
                   <div
                     key={i}
-                    className="flex-shrink-0 w-64 h-32 flex items-center justify-center px-8"
+                    className="flex-shrink-0 w-72 h-44 flex items-center justify-center px-8"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.alt}
                       width={240}
                       height={96}
-                      className="object-contain h-16 w-auto max-w-full transition-all duration-300 hover:scale-105"
+                      className="object-contain w-auto h-auto transition-all duration-300 hover:scale-105"
+                      style={{
+                        maxHeight: `${partner.desktopMaxHeight ?? DEFAULT_DESKTOP_MAX_HEIGHT}px`,
+                        maxWidth: `${partner.desktopMaxWidth ?? DEFAULT_DESKTOP_MAX_WIDTH}px`,
+                      }}
                     />
                   </div>
                 ))}

@@ -18,13 +18,13 @@ const contactMethods = [
     value: "hello@dokuma.co.zw",
     href: "mailto:hello@dokuma.co.zw",
   },
-  {
-    icon: Phone,
-    title: "Call Us",
-    description: "Mon-Fri from 8am to 5pm CAT",
-    value: "+263 773 320 160",
-    href: "tel:+263773320160",
-  },
+  // {
+  //   icon: Phone,
+  //   title: "Call Us",
+  //   description: "Mon-Fri from 8am to 5pm CAT",
+  //   value: "+263 773 320 160",
+  //   href: "tel:+263773320160",
+  // },
   {
     icon: Clock,
     title: "Business Hours",

@@ -11,7 +11,18 @@ const offices: Array<{
   postal: string
   description: string
   isPrimary: boolean
-}> = []
+}> = [
+  {
+    country: "Zimbabwe",
+    city: "Harare",
+    address: "78 Piers Road",
+    building: "Borrowdale",
+    postal: "Harare, Zimbabwe",
+    description:
+      "Our head office and engineering hub — home to the teams delivering digital transformation projects across the continent.",
+    isPrimary: true,
+  },
+]
 
 export function OfficeLocations() {
   const sectionRef = useRef<HTMLElement>(null)
